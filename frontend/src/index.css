@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans antialiased min-h-screen overflow-x-hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4 { @apply font-semibold tracking-tight text-slate-900; }
+}
+
+@layer components {
+  /* ── Cards & Panels ── */
+  .card {
+    @apply bg-white border border-slate-200/90 rounded-xl shadow-card;
+  }
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-emerald-200 hover:shadow-panel;
+  }
+  .panel {
+    @apply bg-white border border-slate-200/90 rounded-2xl shadow-panel;
+  }
+  .glass-panel {
+    @apply bg-white/95 backdrop-blur-sm border border-slate-200/90 rounded-2xl shadow-panel;
+  }
+
+  /* ── Stat tile ── */
+  .stat-tile {
+    @apply card p-5 flex flex-col gap-3 bg-white border-slate-200/90 hover:border-emerald-200 transition-colors;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700
+           text-white text-sm font-medium transition-all duration-150 shadow-sm
+           focus:outline-none focus:ring-2 focus:ring-emerald-500/50 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg
+           bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 hover:border-slate-300
+           text-sm font-medium transition-all duration-150
+           focus:outline-none focus:ring-2 focus:ring-slate-300/50 active:scale-[0.98];
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-700
+           text-white text-sm font-medium transition-all duration-150 active:scale-[0.98];
+  }
+
+  /* ── Badges ── */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-2xs font-mono font-semibold uppercase tracking-wide;
+  }
+  .badge-teal  { @apply badge bg-emerald-50 text-emerald-700 border border-emerald-200; }
+  .badge-emerald  { @apply badge bg-emerald-50 text-emerald-700 border border-emerald-200; }
+  .badge-warn  { @apply badge bg-amber-50 text-amber-700 border border-amber-200; }
+  .badge-danger{ @apply badge bg-rose-50 text-rose-700 border border-rose-200; }
+  .badge-ok    { @apply badge bg-emerald-50 text-emerald-700 border border-emerald-200; }
+  .badge-muted { @apply badge bg-slate-100 text-slate-600 border border-slate-200; }
+
+  /* ── Nav link ── */
+  .nav-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+           text-slate-600 hover:text-slate-900 hover:bg-slate-100
+           transition-all duration-150;
+  }
+  .nav-link-active {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold
+           text-emerald-800 bg-emerald-50/90 border border-emerald-200/90 shadow-sm;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    @apply text-2xs font-bold uppercase tracking-widest text-slate-400 px-3 mb-1.5;
+  }
+
+  /* ── Divider ── */
+  .divider { @apply border-t border-slate-200; }
+
+  /* ── Input ── */
+  .input {
+    @apply w-full bg-white border border-slate-200 rounded-lg px-3 py-2
+           text-sm text-slate-900 placeholder-slate-400
+           focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-600
+           transition-all duration-150;
+  }
+
+  /* ── Progress bar ── */
+  .progress-track { @apply w-full bg-slate-100 rounded-full overflow-hidden; }
+  .progress-fill  { @apply h-full bg-emerald-600 rounded-full transition-all duration-500; }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }

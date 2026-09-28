@@ -1,0 +1,16 @@
+{
+  "name": "EndoAI Lesion Classifier",
+  "version": "0.1.0-demo",
+  "type": "ResNet50 / Custom CNN",
+  "status": "DEMO",
+  "classes": [
+    "Polyp (Adenomatous)",
+    "Polyp (Hyperplastic)",
+    "Ulcerative Lesion",
+    "Active Bleeding",
+    "Esophagitis (Grade A/B)",
+    "Normal Mucosa"
+  ],
+  "input_size": [224, 224],
+  "description": "Demonstration classifier model abstraction with Softmax probability normalization."
+}

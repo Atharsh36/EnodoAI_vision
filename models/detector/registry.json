@@ -1,0 +1,17 @@
+{
+  "name": "EndoAI Detector",
+  "version": "0.1.0-demo",
+  "type": "YOLOv8",
+  "status": "DEMO",
+  "classes": [
+    "polyp",
+    "ulcer",
+    "bleeding",
+    "esophagitis",
+    "normal_mucosa"
+  ],
+  "input_size": [640, 640],
+  "default_confidence_threshold": 0.50,
+  "default_iou_threshold": 0.45,
+  "description": "Demonstration detector model abstraction with contour/heuristic fallback when trained weights are missing."
+}
